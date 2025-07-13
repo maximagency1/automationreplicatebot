@@ -1,0 +1,106 @@
+{
+    "cookies": [
+        {
+            "domain": ".zoho.eu",
+            "httpOnly": true,
+            "name": "wms-tkp-token",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "20106988632-ec2fa4b5-2cf349279d8b6e556dee9baac4e4bf5a"
+        },
+        {
+            "domain": "accounts.zoho.eu",
+            "httpOnly": true,
+            "name": "JSESSIONID",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "3C362468D965D1406815C964CFA58019"
+        },
+        {
+            "domain": "accounts.zoho.eu",
+            "httpOnly": false,
+            "name": "iamcsr",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "999cf593d8fc086811712bc54dc5fd4076cbaaf3af20c02b30d86d94217985fd7e227c55aaeaa1d35fbd6d4633c2e8bfa74bc519caf6db7a778451ef1b31556d"
+        },
+        {
+            "domain": "accounts.zoho.eu",
+            "expiry": 1752406949,
+            "httpOnly": false,
+            "name": "_z_identity",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "true"
+        },
+        {
+            "domain": "accounts.zoho.eu",
+            "expiry": 1760175749,
+            "httpOnly": true,
+            "name": "IAMSATCK_20106988632",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "eyJraWQiOiJhY2NvdW50cy5lYXIuc2VjcmV0LmxhYmVsIiwiZW5jIjoiQTI1NkNCQyIsImFsZyI6ImRpciJ9...MmE2OWMxYjUxNThmMGY4NGI5ZDhiODlhNzZlMWIwMjAzYTNhZTdkY2YwZDIyOGFmODE2NTJlMWNjOGEzYTE5Nzk3NjlmNDFkZWQ4YTAyYjllY2EyYzFhMGMxNDFlYjdhZWUyYTc0NDhjNDY3OGEwYTA0YjE5NTlmYzU5YjdkNGM4ZjQxODVjOTZmODAxMTA0NzE2ZDAwMTVlMzY2ZmRjYQ."
+        },
+        {
+            "domain": "accounts.zoho.eu",
+            "httpOnly": true,
+            "name": "zalb_d4bcc0a499",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "4ba13688e9b4e9512538534cde151d6b"
+        },
+        {
+            "domain": ".zoho.eu",
+            "expiry": 1755423749,
+            "httpOnly": true,
+            "name": "_iambdt",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "e7e77e5612e00707046ee261fe71d2f1690a7e2cbbf5a909c9c837145d7ff5d726102793245baa6f4db7b928ebe4bf2107a91c6a6c308049ec8c6f0a6ab42541"
+        },
+        {
+            "domain": "accounts.zoho.eu",
+            "httpOnly": false,
+            "name": "_zcsr_tmp",
+            "path": "/",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "999cf593d8fc086811712bc54dc5fd4076cbaaf3af20c02b30d86d94217985fd7e227c55aaeaa1d35fbd6d4633c2e8bfa74bc519caf6db7a778451ef1b31556d"
+        },
+        {
+            "domain": ".zoho.eu",
+            "expiry": 1755423749,
+            "httpOnly": true,
+            "name": "_iamadt",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "d9d0e65f0b3601bb92adae01adbb6713d71f050d0e456f1d0a60dda48d22b7c72d922fabc8c3f674b56356ab562eb89e"
+        },
+        {
+            "domain": "accounts.zoho.eu",
+            "httpOnly": true,
+            "name": "stk",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "a33750d32727e0e734c9fe1f8513b02a"
+        }
+    ],
+    "localStorage": {
+        "clear": {},
+        "getItem": {},
+        "key": {},
+        "length": 0,
+        "removeItem": {},
+        "setItem": {}
+    }
+}

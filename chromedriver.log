@@ -1,0 +1,19 @@
+[1752397558.439][INFO]: Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 59695
+[1752397558.439][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1752397558.509][INFO]: [5913fb03e5941ee34e82c780542ab6b4] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         },
+         "pageLoadStrategy": "normal"
+      },
+      "firstMatch": [ {
+      } ]
+   }
+}
+[1752397558.512][INFO]: [5913fb03e5941ee34e82c780542ab6b4] RESPONSE InitSession ERROR unknown error: cannot find Chrome binary
+[1752397558.512][DEBUG]: Log type 'driver' lost 0 entries on destruction
+[1752397558.512][DEBUG]: Log type 'browser' lost 0 entries on destruction

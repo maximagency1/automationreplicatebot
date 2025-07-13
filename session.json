@@ -1,79 +1,126 @@
 {
     "cookies": [
         {
-            "domain": ".zoho.eu",
+            "domain": "mailadmin.zoho.eu",
             "httpOnly": true,
-            "name": "wms-tkp-token",
-            "path": "/",
-            "sameSite": "None",
-            "secure": true,
-            "value": "20106988632-ec2fa4b5-2cf349279d8b6e556dee9baac4e4bf5a"
-        },
-        {
-            "domain": "accounts.zoho.eu",
-            "httpOnly": true,
-            "name": "JSESSIONID",
+            "name": "zalb_2175579276",
             "path": "/",
             "sameSite": "Lax",
             "secure": true,
-            "value": "3C362468D965D1406815C964CFA58019"
-        },
-        {
-            "domain": "accounts.zoho.eu",
-            "httpOnly": false,
-            "name": "iamcsr",
-            "path": "/",
-            "sameSite": "None",
-            "secure": true,
-            "value": "999cf593d8fc086811712bc54dc5fd4076cbaaf3af20c02b30d86d94217985fd7e227c55aaeaa1d35fbd6d4633c2e8bfa74bc519caf6db7a778451ef1b31556d"
-        },
-        {
-            "domain": "accounts.zoho.eu",
-            "expiry": 1752406949,
-            "httpOnly": false,
-            "name": "_z_identity",
-            "path": "/",
-            "sameSite": "None",
-            "secure": true,
-            "value": "true"
-        },
-        {
-            "domain": "accounts.zoho.eu",
-            "expiry": 1760175749,
-            "httpOnly": true,
-            "name": "IAMSATCK_20106988632",
-            "path": "/",
-            "sameSite": "Lax",
-            "secure": true,
-            "value": "eyJraWQiOiJhY2NvdW50cy5lYXIuc2VjcmV0LmxhYmVsIiwiZW5jIjoiQTI1NkNCQyIsImFsZyI6ImRpciJ9...MmE2OWMxYjUxNThmMGY4NGI5ZDhiODlhNzZlMWIwMjAzYTNhZTdkY2YwZDIyOGFmODE2NTJlMWNjOGEzYTE5Nzk3NjlmNDFkZWQ4YTAyYjllY2EyYzFhMGMxNDFlYjdhZWUyYTc0NDhjNDY3OGEwYTA0YjE5NTlmYzU5YjdkNGM4ZjQxODVjOTZmODAxMTA0NzE2ZDAwMTVlMzY2ZmRjYQ."
-        },
-        {
-            "domain": "accounts.zoho.eu",
-            "httpOnly": true,
-            "name": "zalb_d4bcc0a499",
-            "path": "/",
-            "sameSite": "Lax",
-            "secure": true,
-            "value": "4ba13688e9b4e9512538534cde151d6b"
+            "value": "9d90a4f6a270796ebf239eeb0ff0a7cd"
         },
         {
             "domain": ".zoho.eu",
-            "expiry": 1755423749,
-            "httpOnly": true,
-            "name": "_iambdt",
+            "expiry": 1752407599,
+            "httpOnly": false,
+            "name": "com_avcliq_owner",
+            "path": "/",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "1752407502364"
+        },
+        {
+            "domain": ".zoho.eu",
+            "expiry": 1752407599,
+            "httpOnly": false,
+            "name": "com_chat_owner",
+            "path": "/",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "1752407502363"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "httpOnly": false,
+            "name": "zmcsr",
             "path": "/",
             "sameSite": "None",
             "secure": true,
-            "value": "e7e77e5612e00707046ee261fe71d2f1690a7e2cbbf5a909c9c837145d7ff5d726102793245baa6f4db7b928ebe4bf2107a91c6a6c308049ec8c6f0a6ab42541"
+            "value": "19ce413d2a40a4f93f9b0d1dea15c2ef655bc3e793413a4051bc8282af9c81d44817e6c13a654a593b74b881fb008e636cf4e7b5f0e111fc0d71e250f23595b8"
         },
         {
-            "domain": "accounts.zoho.eu",
+            "domain": "mailadmin.zoho.eu",
+            "expiry": 1752493899,
+            "httpOnly": true,
+            "name": "zmcdn",
+            "path": "/",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "MTA5LjE4NS4xNTYuMjQxOjpNRA=="
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
             "httpOnly": false,
             "name": "_zcsr_tmp",
             "path": "/",
             "sameSite": "Strict",
             "secure": true,
-            "value": "999cf593d8fc086811712bc54dc5fd4076cbaaf3af20c02b30d86d94217985fd7e227c55aaeaa1d35fbd6d4633c2e8bfa74bc519caf6db7a778451ef1b31556d"
+            "value": "19ce413d2a40a4f93f9b0d1dea15c2ef655bc3e793413a4051bc8282af9c81d44817e6c13a654a593b74b881fb008e636cf4e7b5f0e111fc0d71e250f23595b8"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "httpOnly": false,
+            "name": "CT_CSRF_TOKEN",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "19ce413d2a40a4f93f9b0d1dea15c2ef655bc3e793413a4051bc8282af9c81d44817e6c13a654a593b74b881fb008e636cf4e7b5f0e111fc0d71e250f23595b8"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "httpOnly": true,
+            "name": "zalb_d18460ea4c",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "53009b6f2eb8533358084be698c45baa"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "httpOnly": true,
+            "name": "JSESSIONID",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "F8EAA77FCC807582D8FB93BFAD5389FC"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "httpOnly": true,
+            "name": "zalb_ad9736e59b",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "6b6f06fd4e65592310a8e4e9be8d5d0f"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "expiry": 1754999496,
+            "httpOnly": true,
+            "name": "zmuac",
+            "path": "/",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "MjAxMDY5ODg2MzJfMjQ2MDg3MA=="
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "expiry": 1752493896,
+            "httpOnly": true,
+            "name": "zmirc",
+            "path": "/",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "2"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "httpOnly": false,
+            "name": "CSRF_TOKEN",
+            "path": "/",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "19ce413d2a40a4f93f9b0d1dea15c2ef655bc3e793413a4051bc8282af9c81d44817e6c13a654a593b74b881fb008e636cf4e7b5f0e111fc0d71e250f23595b8"
         },
         {
             "domain": ".zoho.eu",
@@ -86,21 +133,73 @@
             "value": "d9d0e65f0b3601bb92adae01adbb6713d71f050d0e456f1d0a60dda48d22b7c72d922fabc8c3f674b56356ab562eb89e"
         },
         {
-            "domain": "accounts.zoho.eu",
+            "domain": "mailadmin.zoho.eu",
             "httpOnly": true,
-            "name": "stk",
+            "name": "zalb_6c3726645d",
             "path": "/",
             "sameSite": "Lax",
             "secure": true,
-            "value": "a33750d32727e0e734c9fe1f8513b02a"
+            "value": "40c5a5b5724f1a3b08303a7fc9a07fd0"
+        },
+        {
+            "domain": ".zoho.eu",
+            "expiry": 1755423749,
+            "httpOnly": true,
+            "name": "_iambdt",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "e7e77e5612e00707046ee261fe71d2f1690a7e2cbbf5a909c9c837145d7ff5d726102793245baa6f4db7b928ebe4bf2107a91c6a6c308049ec8c6f0a6ab42541"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "expiry": 1752493896,
+            "httpOnly": true,
+            "name": "zmcdn",
+            "path": "/cpanel",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "MTA5LjE4NS4xNTYuMjQxOjpNRA=="
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "httpOnly": true,
+            "name": "zalb_018ec90b7e",
+            "path": "/",
+            "sameSite": "Lax",
+            "secure": true,
+            "value": "fd010e474c333be685e889afca09e790"
+        },
+        {
+            "domain": ".zoho.eu",
+            "httpOnly": true,
+            "name": "wms-tkp-token",
+            "path": "/",
+            "sameSite": "None",
+            "secure": true,
+            "value": "20106988632-ec2fa4b5-2cf349279d8b6e556dee9baac4e4bf5a"
+        },
+        {
+            "domain": "mailadmin.zoho.eu",
+            "expiry": 1754999496,
+            "httpOnly": true,
+            "name": "zmuac",
+            "path": "/cpanel",
+            "sameSite": "Strict",
+            "secure": true,
+            "value": "MjAxMDY5ODg2MzJfMjQ2MDg3MA=="
         }
     ],
     "localStorage": {
+        "20106988632_frequent_smileys": "{\"work\":[\":smile:\",\":happy:\",\":joy:\",\":love:\",\":thinking:\",\":surprise:\",\":thumbsup:\",\":thumbsdown:\",\":namaste:\",\":tensed:\",\":biceps:\",\":doubt:\",\":super:\",\":clap:\",\":fireworks:\",\":food:\",\":gift-box:\"],\"emoji\":[\":grinning:\",\":blush:\",\":wink:\",\":stuck-out-tongue-winking-eye:\",\":flushed:\",\":sob:\",\":sweat-smile:\",\":scream:\",\":sunglasses:\",\":raised-hands:\",\":wave:\",\":house-with-garden:\",\":point-up-2:\",\":dancer:\",\":bouquet:\",\":round-pushpin:\",\":heavy-plus-sign:\"],\"animated\":[\":smile!:\",\":happy!:\",\":joy!:\",\":love!:\",\":thinking!:\",\":surprise!:\",\":thumbsup!:\",\":thumbsdown!:\",\":namaste!:\",\":tensed!:\",\":biceps!:\",\":doubt!:\",\":super!:\",\":clap!:\",\":fireworks!:\",\":food!:\",\":gift-box!:\"],\"customemoji\":[],\"sticker\":[]}",
         "clear": {},
+        "currentTabId": "f06cd527-71bd-4189-8913-7adc0b7dfc57",
         "getItem": {},
         "key": {},
-        "length": 0,
+        "length": 4,
+        "noOfTabs": "1",
         "removeItem": {},
-        "setItem": {}
+        "setItem": {},
+        "wms_firstloaded": "1752407503315"
     }
 }

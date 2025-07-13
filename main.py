@@ -19,38 +19,58 @@ ZOHO_BASE_URL = 'https://accounts.zoho.eu/'
 ADMIN_CONSOLE_URL = 'https://mailadmin.zoho.eu/cpanel/home.do'
 
 
-def handle_verification_tab(driver):
-    """Checks for and handles the 'Verify Your Identity' tab."""
-    print("Checking for verification tab...")
+def handle_verification_window(driver, password):
+    """
+    Robustly checks for and handles a new verification/re-login window.
+    It polls for a new window for several seconds after a sensitive action.
+    """
+    print("Checking for verification window...")
     original_window = driver.current_window_handle
-    try:
-        # Wait for a new tab to open, with a short timeout
-        WebDriverWait(driver, 5).until(EC.number_of_windows_to_be(2))
+    
+    # Poll for a new window to appear for up to 15 seconds
+    for _ in range(15):
         all_windows = driver.window_handles
-        new_window = [window for window in all_windows if window != original_window][0]
-        driver.switch_to.window(new_window)
+        if len(all_windows) > 1:
+            try:
+                new_window = [window for window in all_windows if window != original_window][0]
+                driver.switch_to.window(new_window)
+                
+                # Check if the URL is the one we expect
+                current_url = driver.current_url
+                if "relogin" in current_url or "verify" in current_url:
+                    print(f"Verification window found with URL: {current_url}")
+                    print("Entering password to confirm identity...")
+                    
+                    password_field = WebDriverWait(driver, 10).until(
+                        EC.visibility_of_element_located((By.ID, "relogin_password_input"))
+                    )
+                    password_field.send_keys(password)
+                    password_field.send_keys(Keys.ENTER)
+                    
+                    print("Password submitted. Waiting for window to close...")
+                    # Wait for the verification window to close automatically
+                    WebDriverWait(driver, 10).until(EC.number_of_windows_to_be(1))
+                    
+                    driver.switch_to.window(original_window)
+                    print("Verification successful. Re-saving session data...")
+                    save_session_data(driver)
+                    return True # Indicate that verification was handled
+                else:
+                    # It was some other unexpected pop-up, close it and continue
+                    print(f"Unexpected window appeared with URL: {current_url}. Closing it.")
+                    driver.close()
+                    driver.switch_to.window(original_window)
+                    return False
 
-        if "Verify" in driver.title:
-            print("Verification tab found. Entering password...")
-            password_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.NAME, "password")))
-            password_field.send_keys("Octombrie2005#")
-            password_field.send_keys(Keys.ENTER)
-            print("Password submitted. Waiting for verification to complete...")
-            time.sleep(5) # Wait for the page to process
-            print("Closing verification tab.")
-            driver.close()
-            driver.switch_to.window(original_window)
-            print("Verification successful. Re-saving session...")
-            save_session_data(driver)
-            return True
-        else:
-            # Not the tab we expected, switch back.
-            driver.switch_to.window(original_window)
+            except (NoSuchWindowException, IndexError):
+                # The window might have closed before we could interact with it
+                print("New window disappeared before it could be handled.")
+                driver.switch_to.window(original_window)
+                return False
+        
+        time.sleep(1) # Wait 1 second before checking again
 
-    except TimeoutException:
-        # No new tab appeared, which is fine.
-        print("No verification tab found.")
-        pass
+    print("No verification window appeared within the time limit.")
     return False
 
 def save_session_data(driver):
@@ -139,7 +159,7 @@ def perform_login(driver):
         return False
 
 
-def create_new_user(driver):
+def create_new_user(driver, zoho_password):
     """Creates a new user with dummy data using the tabbing strategy."""
     print("--- Starting User Creation ---")
     fake = Faker()
@@ -203,7 +223,7 @@ def create_new_user(driver):
         print(f"Failed to create new user. Error: {e}")
         return False
 
-def add_new_user(driver):
+def add_new_user(driver, zoho_password):
     """Navigates directly to the user list and then clicks 'Add User'."""
     user_list_url = 'https://mailadmin.zoho.eu/cpanel/home.do#users/list'
     print(f"Navigating directly to user list: {user_list_url}")
@@ -220,7 +240,8 @@ def add_new_user(driver):
         )
         print("Found 'Add' button, clicking it...")
         add_button.click()
-        handle_verification_tab(driver) # Check for verification after clicking 'Add'
+        time.sleep(1) # Give a moment for the new tab to potentially open
+        handle_verification_window(driver, zoho_password) # Check for verification after clicking 'Add'
         time.sleep(2)
 
         try:
@@ -253,24 +274,24 @@ def add_new_user(driver):
             confirm_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, confirm_button_xpath)))
             confirm_button.click()
             print("User deleted successfully.")
-            time.sleep(2)
-            handle_verification_tab(driver) # Check for verification after deletion
+            time.sleep(1) # Give a moment for the new tab to potentially open
+            handle_verification_window(driver, zoho_password) # Check for verification after deletion
             time.sleep(3)
 
             # --- Retry adding user ---
             print("Retrying to click the 'Add' button...")
             add_button_retry_xpath = "//*[(self::a or self::button) and contains(., 'Add')]"
             add_button_retry = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, add_button_retry_xpath)))
-            driver.execute_script("arguments[0].click();", add_button_retry) # Use JS click to avoid interception
+            add_button_retry.click() # Use a standard click for the retry
             print("'Add' button clicked again.")
 
             # Now, we should be on the form page. Create the user.
-            create_new_user(driver)
+            create_new_user(driver, zoho_password)
 
         except TimeoutException:
             # If the pop-up didn't appear, we are on the user creation form.
             print("No license limit pop-up found. Proceeding to create user...")
-            create_new_user(driver)
+            create_new_user(driver, zoho_password)
 
     except Exception as e:
         print(f"\nAn error occurred: {e}")
@@ -303,7 +324,15 @@ def main():
         driver.get(ADMIN_CONSOLE_URL)
         time.sleep(5) # Wait for page to load
 
-        add_new_user(driver)
+        try:
+            with open(CREDENTIALS_FILE, 'r') as f:
+                credentials = json.load(f)
+                zoho_password = credentials['password']
+        except (FileNotFoundError, KeyError):
+            print(f"FATAL: Could not read password from {CREDENTIALS_FILE}.")
+            return
+
+        add_new_user(driver, zoho_password)
 
         print("\nScript has finished its task.")
 
